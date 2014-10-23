@@ -43,6 +43,8 @@ INSTALLED_APPS = (
                   'about',
                   'toppers',
                   'downloads',
+                  'academics',
+                  'infrastructure',
                   )
 
 MIDDLEWARE_CLASSES = (

@@ -5,22 +5,19 @@
  {% block content %}
 <!--Nav Menu Begin-->
 
-<div class=clearfix> 
-<div class="nav-menu-div">
-<ul>
-{% for abouts in about %}    
-<li class="nav-menu-li"><a href="{% url 'detail' abouts.id %}">{{ abouts.message_titled }}</a></li>
-{% endfor %}
-</ul>
-</div>
-<!--Nav Menu End-->
-<!--Nav Detail Start-->
-<div class="nav-detail">
-    {{ aboutst.message_titled }}
-    {{ aboutst.message_body|linebreaks }}
+
+<div class="all">
+    <h1>All News @ Aditya Engineering College</h1>
+    {% for news in news_objs %}
+    <div class="each">
+    {{ news.caption }}<br>
+    {{ news.description }}<br>
+    {{ news.date_time }}<br>
+    </div>
+    {% endfor %}
 </div>
 <!--Nav Detail End-->
-</div>
+
 {% endblock %}
 <!--End of Variable Content -->
 <!--FOOTER-->

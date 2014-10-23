@@ -8,23 +8,23 @@
 <div class=clearfix> 
 <div class="nav-menu-div">
 <ul>
-{% for abouts in about %}    
-<li class="nav-menu-li"><a href="{% url 'detail' abouts.id %}">{{ abouts.message_titled }}</a></li>
+{% for academics in academics %}    
+<li class="nav-menu-li"><a href="{% url 'adetail' academics.id %}">{{ academics.title }}</a></li>
 {% endfor %}
 </ul>
 </div>
 <!--Nav Menu End-->
 <!--Nav Detail Start-->
 <div class="nav-detail">
-    {{ aboutst.message_titled }}
-    {{ aboutst.message_body|linebreaks }}
+    {{ adetail.title }}
+    {{ adetail.detail|linebreaks }}
 </div>
 <!--Nav Detail End-->
 </div>
 {% endblock %}
 <!--End of Variable Content -->
 <!--FOOTER-->
-<footer role="contentinfo">
+<!--<footer role="contentinfo">
     
         <div class="row-fluid footer">
             
@@ -84,7 +84,7 @@
         </div>
 </footer>
 <!--FOOTER-->
-
+-->
 
 
 </body>
