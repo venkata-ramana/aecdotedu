@@ -105,5 +105,5 @@ TEMPLATE_DIRS = (
 
 ABSOLUTE_PATH = lambda x: os.path.join(os.path.abspath(os.path.dirname(__file__)), x)
 
-MEDIA_ROOT ='media'
+MEDIA_ROOT ='media&files'
 MEDIA_URL = '/'
