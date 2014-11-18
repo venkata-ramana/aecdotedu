@@ -38,13 +38,13 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
                   'news_events',
                   'gallery',
-                  'press',
                   'placements',
                   'about',
                   'toppers',
                   'downloads',
                   'academics',
                   'infrastructure',
+                  'journals'
                   )
 
 MIDDLEWARE_CLASSES = (
@@ -76,7 +76,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -105,5 +105,5 @@ TEMPLATE_DIRS = (
 
 ABSOLUTE_PATH = lambda x: os.path.join(os.path.abspath(os.path.dirname(__file__)), x)
 
-MEDIA_ROOT ='media&files'
+MEDIA_ROOT ='media'
 MEDIA_URL = '/'

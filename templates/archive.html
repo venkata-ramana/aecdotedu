@@ -4,24 +4,26 @@
 <!--Variable Content -->
  {% block content %}
 <!--Nav Menu Begin-->
+<ul>
+    {% for date in date_list %}
+    <li>{{ date|date }}</li>
+    {% endfor %}
 
+</ul>
 
-<div class="all">
-    <h2>All Events @ Aditya Engineering College</h2>
-    {% for event in event_objs %}
-    <div class="each">
-    <span class="eventsh1">{{ event.event_title }}</span><br>
-    {{ event.event_agenda }}<br>
-    {{ event.date_time_updated }}<br>
+<div>
+<h1>{{year|date:'Y'}}</h1>
+{% for obj in object_list %}
+<p>
+{{obj.title}}
+</p>
+
+{% endfor %}
     </div>
-      {% endfor %}
-</div>
-<!--Nav Detail End-->
-
 {% endblock %}
 <!--End of Variable Content -->
 <!--FOOTER-->
-<footer role="contentinfo">
+<!--<footer role="contentinfo">
     
         <div class="row-fluid footer">
             
@@ -81,7 +83,7 @@
         </div>
 </footer>
 <!--FOOTER-->
-
+-->
 
 
 </body>

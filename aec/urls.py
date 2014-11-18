@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
 from aec import settings
+from journals.views import ArticleYearArchiveView,ArticleMonthArchiveView
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -23,6 +24,11 @@ urlpatterns = patterns('',
     url(r'^infrastructure$','infrastructure.views.infrastructure',name='infrastructure'),
     url(r'^allnews$','news_events.views.allnews',name='allnews'),
     url(r'^allevents$','news_events.views.allevents',name='allevents'),
+    url(r'^archives/archive/(?P<year>[0-9]{4})/$',ArticleYearArchiveView.as_view(),name='article_year_archive'),
+    url(r'^archives/$','journals.views.newspaperarticles_index',name='archives'),
+    url(r'^archive_index/$','journals.views.archive_index',name='archive_index'),
+    url(r'^archive/(?P<year>[0-9]{4})/(?P<month>[-\w]+)/$',ArticleMonthArchiveView.as_view(),name="archive_month"),
+    url(r'^archive/(?P<year>[0-9]{4})/(?P<month>[0-9]+)/$',ArticleMonthArchiveView.as_view(month_format='%m'),name="archive_month_numeric"),
                       
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

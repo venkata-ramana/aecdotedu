@@ -5,23 +5,14 @@
  {% block content %}
 <!--Nav Menu Begin-->
 
-
-<div class="all">
-    <h2>All Events @ Aditya Engineering College</h2>
-    {% for event in event_objs %}
-    <div class="each">
-    <span class="eventsh1">{{ event.event_title }}</span><br>
-    {{ event.event_agenda }}<br>
-    {{ event.date_time_updated }}<br>
+    {% for year in year_list %}
+{{ year.id__count }} <a href="archive/{{ year.year }}/">{{ year.year }}</a> {{ year.year }}
+{% endfor %}
     </div>
-      {% endfor %}
-</div>
-<!--Nav Detail End-->
-
 {% endblock %}
 <!--End of Variable Content -->
 <!--FOOTER-->
-<footer role="contentinfo">
+<!--<footer role="contentinfo">
     
         <div class="row-fluid footer">
             
@@ -81,7 +72,7 @@
         </div>
 </footer>
 <!--FOOTER-->
-
+-->
 
 
 </body>
