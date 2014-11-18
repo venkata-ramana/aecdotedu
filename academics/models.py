@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class AcademicsInfo(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=160)
     detail = models.TextField()
 
 
