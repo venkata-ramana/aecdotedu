@@ -31,38 +31,5 @@ class ArticleMonthArchiveView(MonthArchiveView):
     model = NewsPaperArticles
     template_name = 'archive_month.html'
 
-def mkmonth_lst():
-    """Make a list of months to show archive links."""
-    if not NewsPaperArticles.objects.count(): return []
-
-# set up vars
-    year, month = time.localtime()[:2]
-    first = Post.objects.order_by("created")[0]
-    fyear = first.created.year
-    fmonth = first.created.month
-    months = []
-
-# loop over years and months
-    for y in range(year, fyear-1, -1):
-        start, end = 12, 0
-        if y == year: start = month
-        if y == fyear: end = fmonth-1
-    
-        for m in range(start, end, -1):
-            months.append((y, m, month_name[m]))
-    return months
-
-def archive_index(request):
-    """Main listing."""
-    posts = NewsPaperArticles.objects.all().order_by("-created")
-    paginator = Paginator(posts, 10)
-    try: page = int(request.GET.get("page", '1'))
-    except ValueError: page = 1
-
-    try:
-        posts = paginator.page(page)
-    except (InvalidPage, EmptyPage):
-        posts = paginator.page(paginator.num_pages)
-
-    return render("archive_index.html", dict(posts=posts, user=request.user,
-                                            post_list=posts.object_list,    months=mkmonth_lst()))
+def index(request):
+    return render(request,'arch.html')

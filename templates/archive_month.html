@@ -7,7 +7,7 @@
 
 <ul>
     {% for article in object_list %}
-        <li>{{ article.pub_date|date:"F j, Y" }}: {{ article.title }}</li>
+        <li>{{ article.pub_date|date:"F j, Y" }} {{ article.title }}</li>
     {% endfor %}
 </ul>
 
