@@ -15,7 +15,7 @@ class ArticleYearArchiveView(YearArchiveView):
     date_field = "date"
     make_object_list = True
     allow_future = True
-    template_name = 'archive.html'
+    template_name = 'archive_year.html'
 
 def newspaperarticles_index(request):
     year_list = NewsPaperArticles.objects.extra(select={'year':"strftime('%%Y',date)"}).values('year').order_by().annotate(Count('id'))
@@ -32,4 +32,4 @@ class ArticleMonthArchiveView(MonthArchiveView):
     template_name = 'archive_month.html'
 
 def index(request):
-    return render(request,'arch.html')
+    return render(request,'archives.html')

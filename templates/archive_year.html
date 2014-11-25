@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+<!--Variable Content -->
+ {% block content %}
+<!--Nav Menu Begin-->
+<ul>
+    {% for date in date_list %}
+    <li>{{ date|date }}</li>
+    {% endfor %}
+
+</ul>
+
+<div>
+<h1>{{year|date:'Y'}}</h1>
+{% for obj in object_list %}
+<p>
+{{obj.title}}
+</p>
+
+{% endfor %}
+    </div>
+{% endblock %}
+<!--End of Variable Content -->
+
+
+
+</body>
+
+</html>
+
