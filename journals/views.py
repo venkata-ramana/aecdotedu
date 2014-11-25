@@ -7,8 +7,6 @@ from datetime import date,time
 from django.core.paginator import Paginator
 from django.utils import timezone
 
-
-
 class ArticleYearArchiveView(YearArchiveView):
     model = NewsPaperArticles
     queryset = NewsPaperArticles.objects.all()
