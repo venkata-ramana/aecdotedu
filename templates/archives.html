@@ -4,12 +4,27 @@
 <!--Variable Content -->
  {% block content %}
 <!--Nav Menu Begin-->
-<div class="panel">
+<!-- Divison for Latest News Articles -->
+
+<h2 class="press-journals">Press Journals</h2>
+<div class="latest-news">
+{% for news in news %}
+<span>{{ news.date }}</span>
+<span>{{ news.title }}</span><br></br>
+{% endfor %}
+</div>
+<!-- Divison for Latest News Articles -->
+
+
+
+<div class="year-month-index">
+<div class="panel_year_month_index">
 <table id="years" cellpadding="5" cellspacing="10">
 </table>
 </div>
-<div class="panel" >
+<div class="panel_year_month_index" >
 <table id="months" cellpadding="2" cellspacing="6"></table>
+</div>
 </div>
 <script>
 var month=['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
@@ -17,14 +32,15 @@ var date=new Date();
 var cur_month=date.getMonth();
 var cur_year=date.getFullYear().toString().substr(2,2);
 var cur_full_year=date.getFullYear();
+start();
 function start()
 {
-var b="<tr><td><a href=/archives/archive/2004/ onMouseOver=get_months(2004)>2004</a></td></tr>";
+var b="<tr><td class=td_year><a href=/archives/archive/2004/ onMouseOver=get_months(2004)>2004</a></td></tr>";
 for(var i=5;i<=cur_year;i++)
 {
 if(i<10)
 i="0"+i;
-b+="<tr><td><a href=/archives/archive/20"+i+"/ onMouseOver=get_months(20"+i+")>20"+i+"</a></td></tr>";
+b+="<tr><td class=td_month><a href=/archives/archive/20"+i+"/ onMouseOver=get_months(20"+i+")>20"+i+"</a></td></tr>";
 }
 document.getElementById("years").innerHTML=b;
 }
@@ -33,14 +49,14 @@ function get_months(y)
 {
 if(y==cur_full_year)
 {
-var a="<tr><td align=center><h3>"+y+"</h3></td></tr>";
+var a="<tr><td class=td_year align=center><h3>"+y+"</h3></td></tr>";
 for(var i=0;i<(cur_month+1);i++)
 a+="<tr><td><a href=/archive/"+y+"/"+month[i]+"/>"+month[i]+"</a></td></tr>";
 document.getElementById("months").innerHTML=a;
 }
 else
 {
-var a="<tr><td align=center><h3>"+y+"</h3></td></tr>";
+var a="<tr><td class=td_month align=center><h3>"+y+"</h3></td></tr>";
 for(var i=0;i<12;i++)
 a+="<tr><td><a href=/archive/"+y+"/"+month[i]+"/>"+month[i]+"</a></td></tr>";
 document.getElementById("months").innerHTML=a;

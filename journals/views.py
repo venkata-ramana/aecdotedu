@@ -24,4 +24,5 @@ class ArticleMonthArchiveView(MonthArchiveView):
     template_name = 'archive_month.html'
 
 def index(request):
-    return render(request,'archives.html')
+    latest_news = NewsPaperArticles.objects.order_by('-date')[:25]
+    return render(request,'archives.html',{'news':latest_news})
