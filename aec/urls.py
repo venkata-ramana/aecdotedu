@@ -52,6 +52,12 @@ urlpatterns = patterns('',
     url(r'^archive/(?P<year>[0-9]{4})/(?P<month>[-\w]+)/$',ArticleMonthArchiveView.as_view(),name="archive_month"),
     url(r'^archives$','journals.views.index',name='archives'),
     url(r'^archives/archive/(?P<year>[0-9]{4})/$',ArticleYearArchiveView.as_view(),name='article_year_archive'),
+    
+    ###################
+    #URL's For Downloads
+    ###################
+
+    url(r'^downloads$','downloads.views.index',name='downloads'),
 
     ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
