@@ -57,7 +57,7 @@ urlpatterns = patterns('',
     #URL's For Downloads
     ###################
 
-    url(r'^downloads$','downloads.views.index',name='downloads'),
+                       #url(r'^downloads$','downloads.views.index',name='downloads'),
 
     ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
