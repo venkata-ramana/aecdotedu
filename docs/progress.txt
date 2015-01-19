@@ -1,6 +1,1 @@
-News & Events
-Academics
-About 
-Infrastructure
-Gallery
-Downloads
+1.All Views must be converted to Class Based Views
