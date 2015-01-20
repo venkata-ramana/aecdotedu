@@ -26,6 +26,11 @@
 <table id="months" cellpadding="2" cellspacing="6"></table>
 </div>
 </div>
+
+{% endblock content %}
+<!--End of Variable Content -->
+<!--FOOTER-->
+{% block scripts %}
 <script>
 var month=['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
 var date=new Date();
@@ -64,13 +69,8 @@ document.getElementById("months").innerHTML=a;
 }
 
 </script>
-{% endblock %}
-<!--End of Variable Content -->
-<!--FOOTER-->
+{% endblock scripts %}
 
 
 
-
-
-</html>
 

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-<!--Variable Content -->
+<!--Variable Body -->
 {% block content %}
 
 <div class="slide-banner" id="slideshow" style="overflow: hidden;">
@@ -76,13 +76,15 @@
 <div class="rec"><img src="{% static 'assets1/rec.gif' %}" width="1100px" height="100px"></div>
 
 </div>
-
+<!--End of Variable Body-->
+{% endblock content %}
+{% block scripts %}
 <script type="text/javascript" src="/static/js/jquery.min.js"></script>
 <script type="text/javascript" src="/static/js/cycle.js"></script>
 <script>
 $(function() {$('#slideshow').cycle({fx:'scrollHorz',timeout: 3000,prev:'#prev',next:'#next'});});
 </script>
-{% endblock %}
-<!--End of Variable Content -->
+{% endblock scripts %}
+
 
 
