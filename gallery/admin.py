@@ -1,7 +1,12 @@
 from django.contrib import admin
-from gallery.models import Gallery
-from gallery.models import GalleryImages
 
+# Register your models here.
+from . models import GalleryImages,Gallery
+class ItemInline(admin.StackedInline):
+    model = GalleryImages
+    extra = 0
 
-admin.site.register(Gallery)
-admin.site.register(GalleryImages)
+class GalleryAdmin(admin.ModelAdmin):
+    inlines = [ItemInline]
+
+admin.site.register(Gallery,GalleryAdmin)

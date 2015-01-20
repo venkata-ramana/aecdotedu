@@ -1,2 +1,9 @@
 *.pyc
 *.DS_Store
+*.jpg
+*.jpeg
+
+*.js
+*.JPG
+*.png
+media

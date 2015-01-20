@@ -4,8 +4,6 @@ from .models import InfrastructureInfo
 def infrastructure(request):
     infrastructure = InfrastructureInfo.objects.all()
     return render(request,'infrastructure.html',{'infrastructure': infrastructure,})
-
-
 def idetail(request, infrastructure_id):
     infrastructure = InfrastructureInfo.objects.all()
     idetail = get_object_or_404(InfrastructureInfo, pk=infrastructure_id)

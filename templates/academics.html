@@ -2,92 +2,29 @@
 {% load staticfiles %}
 
 <!--Variable Content -->
- {% block content %}
+{% block content %}
 <!--Nav Menu Begin-->
-
 <div class=clearfix> 
-<div class="nav-menu-div">
-<ul>
-{% for academics in academics %}    
-<li class="nav-menu-li"><a href="{% url 'adetail' academics.id %}">{{ academics.title }}</a></li>
-{% endfor %}
-</ul>
+    <div class="nav-menu-div">
+        <ul>
+            {% for academics in academics %}    
+            <li class="nav-menu-li"><a href="{% url 'adetail' academics.id %}">{{ academics.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <!--Nav Menu End-->
+    <!--Nav Detail Start-->
+    <div class="nav-detail">
+        {{ adetail.title }}
+        {{ adetail.detail|linebreaks }}
+    </div>
+    <!--Nav Detail End-->
 </div>
-<!--Nav Menu End-->
-<!--Nav Detail Start-->
-<div class="nav-detail">
-    {{ adetail.title }}
-    {{ adetail.detail|linebreaks }}
-</div>
-<!--Nav Detail End-->
-</div>
-{% endblock %}
+
 <!--End of Variable Content -->
-<!--FOOTER-->
-<!--<footer role="contentinfo">
-    
-        <div class="row-fluid footer">
-            
-            <div class="section group">
-                <div class="col span_1_of_3">
-                <ul class=footercol1>
-                    <li>
-                        Maps
-                        </li>
-                    
-                    <li>
-                        AEC Mail
-                    </li>
-                    <li>
-                        UX/UD 
-                    </li>
-                     <li>
-                        Quick Links
-                    </li>
+{% endblock content %}
 
-                    </ul>
-                </div>
-                <div class="col span_1_of_3">
-                    <div class=logotext><span class=main>ADITYA</span><br>
-                        <span>ENGINEERING COLLEGE<span>
-                            </div>
-                </div>
-                <div class="col span_1_of_3">
-                    <div class="address"
-                    ADITYA ENGINEERING COLLEGE<br>
-                    Aditya Nagar<br>
-                    ADB Road <br>
-                
-                    Pin:533437<br>
-                    East-Godavari District<br>
-                    Andhra Pradesh,<br>
-                        INDIA. <br>
-
-                Telephone : +91 8852-252243 <br>
-                Fax:      : +91 8852-252250 <br>
-                </div>
-            </div>
-        
-        </div>
-        </div>
-        <div class="row-fluid">
-            <div class=social>
-            <ul>
-                <li>Instagram</li>
-                <li>Twitter</li>
-                <li>Facebook</li>
-                <li>YouTube</li>
-                <li>Tumblr</li>
-            </ul>
-            <p class=copyright>&#169; 2014 The Aditya Engineering College</p>
-            </div>
-        </div>
-</footer>
-<!--FOOTER-->
--->
+{% block scripts %}
 
 
-</body>
-
-</html>
-
+{% endblock scripts %}

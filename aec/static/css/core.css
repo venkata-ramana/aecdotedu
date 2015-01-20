@@ -51,10 +51,10 @@ width: 100%;
     margin: 0 auto;
     font-family:baskerville;
     font-size:19px;
-    width:245px;
+    width:645px;
 }
 span.main{
-    font-size:59px;
+    font-size:39px;
 }
 
 
@@ -166,7 +166,7 @@ footer .row-fluid:last-child {
     font-family: ebgaramond;
 }
 .copyright{
- 
+
     width: 500px;
     margin: 0 auto;
 }
@@ -196,11 +196,11 @@ box-shadow: 0 0 0 1px rgba(0,0,0,0.1),0 1px 2px rgba(0,0,0,0.1);
 clear:both;
 
 }
-.clearfix:after { 
-   content: "."; 
-   visibility: hidden; 
-   display: block; 
-   height: 0; 
+.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
    clear: both;
 }
 .wrapper{
@@ -257,7 +257,7 @@ margin:0px 0 10px;
 text-align:center;
 }
 
-.top_stories 
+.top_stories
 {
 padding-left:10px;
 width:1090px;
@@ -272,7 +272,7 @@ width:350px;
 padding:10px 0 0 10px;
 
 }
-.top_stories .story 
+.top_stories .story
 {
 display:inline-block;
 
@@ -369,7 +369,7 @@ color: #FFF;
     margin-right: 25px;
     display: inline-block;
 }
-/* write css here for block over content */
+/* write css here for block over content nav + right side division */
 .nav-menu-div{
 display:inline-block;
 float:left;
@@ -402,7 +402,8 @@ text-shadow: 0px 1px 0px #FFF;
 /*border-left: 2px solid #FAFAFB;*/
 text-decoration:none;
 }
-/* end css here for block over content */
+/* end css here for block over content  nav + right side division */
+
 .all{
 background: #FFFFFF;
 padding: 0px 60px;
@@ -411,4 +412,135 @@ min-height: 700px;
 .each{
     padding: 20px 0px;
     font-size: 19px;
+}
+.newsh1,.eventsh1{
+    color: blue;
+    font-size: 24px;
+
+}
+
+
+/*css for indexing years and months*/
+.panel_year_month_index{
+    width:100px;
+    background-color:#ddd;
+    display: inline-block;
+    padding-left: 15px;
+}
+.td_year, .td_month a{
+width:80px;
+border-bottom: 1px solid black;
+text-align: center;
+font-size: 18pt;
+text-decoration: none;
+}
+
+.td_month a{font-size: 14px;}
+.td_year a{font-size: 17px;}
+.year-month-index{
+    display: inline-block;
+    float: right;
+}
+.latest-news{
+    display: inline-block;
+    float: left;
+}
+
+.press-journals{
+    font-size: 24px;
+    color: blue;
+}
+.infowebapp{
+    margin: 0;
+    padding: 0;
+}
+.logorecog{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-family: courier new;
+    text-align:center;
+}
+.textmatter{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+.carosel img{
+max-height: 400px;
+text-align: center;
+}
+
+
+
+
+
+
+
+
+/*Grid System*/
+/**/
+[class*='col-'] {
+  float: left;
+}
+[class*='col-'] {
+  padding-right: 20px;
+}
+[class*='col-']:last-of-type {
+  padding-right: 0;
+}
+/**/
+/**/
+.col-2-3 {
+  width: 66.66%;
+}
+.col-1-3 {
+  width: 33.33%;
+}
+.col-1-2 {
+  width: 50%;
+}
+.col-1-4 {
+  width: 25%;
+}
+.col-1-8 {
+  width: 12.5%;
+}
+/**/
+/**/
+.grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.col-1-1{
+  width: 100%;
+}
+.col-1-2{
+  width: 50%;
+}
+/**/
+/*Grid System*/
+.col1{
+  background: blue;
+}
+.col2{
+  background: red;
+}
+.page-wrap{
+  width: 1000px;
+  margin: 0 auto;
+
 }
